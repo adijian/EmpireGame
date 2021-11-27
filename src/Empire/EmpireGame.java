@@ -1,5 +1,5 @@
+package Empire;
 import java.util.*;
-import java.util.stream.Collectors;
 
 public class EmpireGame {
         public static class Engine {
@@ -18,7 +18,7 @@ public class EmpireGame {
             }
 
             public static void createVillager() {
-                EmpireGame.Engine.Villager newVillager = new Engine.Villager();
+                Villager newVillager = new Villager();
                 newVillager.number = Engine.villagersArray.size() + 1;
                 Engine.villagersArray.add(newVillager.nickname);
                 if (newVillager.gender.equals("female")) {
@@ -42,7 +42,7 @@ public class EmpireGame {
             }
 
             public static void createTownCenter() {
-                EmpireGame.Engine.Town_Center newTownCenter = new Engine.Town_Center();
+                Buildings.Town_Center newTownCenter = new Buildings.Town_Center();
                 newTownCenter.number = Engine.townCenterArray.size();
                 newTownCenter.name = newTownCenter.number + " Town Center";
                 Engine.villagersArray.add(newTownCenter.name);
@@ -54,7 +54,7 @@ public class EmpireGame {
             // Each game provides the player with a town center, 4 villagers and a horse.
             public static void initialCreationTownCenter(){
                 System.out.println("Building the First Town Center.");
-                EmpireGame.Engine.Town_Center firstTownCenter = new Engine.Town_Center();
+                Buildings.Town_Center firstTownCenter = new Buildings.Town_Center();
                 firstTownCenter.name = "First Town Center";
                 EmpireGame.Engine.Build(firstTownCenter.name);
                 EmpireGame.Engine.townCenterArray.add(firstTownCenter.name);
@@ -66,66 +66,6 @@ public class EmpireGame {
                     Engine.createVillager();
                 }
             }
-
-            /*================
-                  Buildings
-             ================*/
-            public static class Town_Center {
-                int hp = 120;
-                public int number;
-                public String name = " ";
-
-                void createVillagerFromTownCenter() {
-                    EmpireGame.Engine.createVillager();
-                }
-            }
-
-            /*================
-                  NPCs
-             ================*/
-            static class Villager {
-                // created from town
-
-                int number;
-                int hp = 20;
-                String name;
-                public String gender = determineGender();
-                public String nickname = createNickname();
-                String job;
-
-                public String determineGender() {
-                    Random rand = new Random();
-                    int genderValue = rand.nextInt(2);
-                    switch (genderValue) {
-                        case 0:
-                            return "male";
-                        case 1:
-                            return "female";
-                    }
-                    return gender = String.valueOf(genderValue);
-                }
-                public String createNickname() {
-                    nickname = gender;
-                    assert nickname != null;
-                    if (nickname.equals("male")){
-                        final String[] maleNickname = {"Eudes", "Garnier", "Gosse", "Josse", "Roul",
-                                "Roland", "Vauqelin", "Jehan", "Fernnand", "Piers",
-                                "Geoffroi", "Estienne", "Guiscard", "Onfroi", "Franchesco"};
-                        Random randomMale = new Random();
-                        int index = randomMale.nextInt(maleNickname.length);
-                        return maleNickname[index];
-                    }
-                    if (nickname.equals("female")){
-                        final String[] maleNickname = {"Eudes", "Garnier", "Gosse", "Josse", "Roul",
-                                "Roland", "Vauqelin", "Jehan", "Fernnand", "Piers",
-                                "Geoffroi", "Estienne", "Guiscard", "Onfroi", "Franchesco"};
-                        Random randomMale = new Random();
-                        int index = randomMale.nextInt(maleNickname.length);
-                        return maleNickname[index];
-                    }
-                    return nickname;
-                }
-        }
     }
 
     /*================
