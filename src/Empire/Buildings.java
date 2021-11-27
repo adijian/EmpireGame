@@ -3,7 +3,6 @@ package Empire;
 /*================
     Buildings
 ================*/
-
 public class Buildings {
 
     public static class Town_Center {

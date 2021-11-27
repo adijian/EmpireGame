@@ -19,10 +19,10 @@ public class CreateActions {
             CreateActions.createVillager();
         }
     }
+
     /*================
       Generic Actions
      ================*/
-
     public static void Build(String building_built) {
         System.out.println(building_built + " has been built.");
     }
