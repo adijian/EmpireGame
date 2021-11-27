@@ -12,7 +12,7 @@ public class Buildings {
         public String name = " ";
 
         void createVillagerFromTownCenter() {
-            EmpireGame.Engine.createVillager();
+            CreateActions.createVillager();
         }
     }
 }
