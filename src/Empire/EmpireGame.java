@@ -6,8 +6,8 @@ public class EmpireGame {
             /*================
                   Arrays
              ================*/
-            public static List<String> townCenterArray = new ArrayList<String>();
-            public static List<String> villagersArray = new ArrayList<String>();
+            public static List<String> townCenterArray = new ArrayList<>();
+            public static List<String> villagersArray = new ArrayList<>();
 
 
             /*================
@@ -18,7 +18,7 @@ public class EmpireGame {
             }
 
             public static void createVillager() {
-                Villager newVillager = new Villager();
+                Npc.Villager newVillager = new Npc.Villager();
                 newVillager.number = Engine.villagersArray.size() + 1;
                 Engine.villagersArray.add(newVillager.nickname);
                 if (newVillager.gender.equals("female")) {
@@ -31,7 +31,7 @@ public class EmpireGame {
                 }
             }
 
-            public static void killVillager(Villager villagerToBeKilled){
+            public static void killVillager(Npc.Villager villagerToBeKilled){
                 if (villagerToBeKilled.hp == 0) {
                     if (villagerToBeKilled.gender.equals("female"))
                         System.out.println("OH NO! " + villagerToBeKilled.nickname + " is dead! She fought and lived courageously");
