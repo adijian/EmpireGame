@@ -30,7 +30,7 @@ public class CreateActions {
     public static void createVillager() {
         Npc.Villager newVillager = new Npc.Villager();
         newVillager.number = EmpireGame.Engine.villagersArray.size() + 1;
-        EmpireGame.Engine.villagersArray.add(newVillager.nickname);
+        EmpireGame.Engine.villagersArray.add(newVillager);
         if (newVillager.gender.equals("female")) {
             System.out.println("A new villager was born and raised.\nHer name is " + newVillager.nickname + ". She is villager number " + newVillager.number + ".");
         }
@@ -44,6 +44,6 @@ public class CreateActions {
         Buildings.Town_Center newTownCenter = new Buildings.Town_Center();
         newTownCenter.number = EmpireGame.Engine.townCenterArray.size();
         newTownCenter.name = newTownCenter.number + " Town Center";
-        EmpireGame.Engine.villagersArray.add(newTownCenter.name);
+        EmpireGame.Engine.villagersArray.add(newTownCenter);
     }
 }

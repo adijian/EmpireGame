@@ -11,15 +11,15 @@ public class EmpireGame {
             /*================
                   Arrays
              ================*/
-            public static List<String> townCenterArray = new ArrayList<>();
-            public static List<String> villagersArray = new ArrayList<>();
+            public static List<Object> townCenterArray = new ArrayList<>();
+            public static List<Object> villagersArray = new ArrayList<>();
 
         public static void gameStart(){
             try {
-                System.out.println("================\n" +
-                        "~ Game started ~\n" +
-                        "================" +
-                        "\n");
+                System.out.println( "================\n" +
+                                    "~ Game started ~\n" +
+                                    "================" +
+                                    "\n");
 
                 CreateActions.initialCreationTownCenter();
                 System.out.println("The total number of Town Centers is: " + EmpireGame.Engine.townCenterArray.size() + ".\n");
