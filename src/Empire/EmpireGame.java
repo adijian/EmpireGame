@@ -66,6 +66,7 @@ public class EmpireGame {
                             System.out.println("Not released yet.");
                             userActionsInput();
                     }
+                userActionsInput();
                 }
                 catch (Exception e){
                     userActionsInput();
