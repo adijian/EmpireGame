@@ -10,7 +10,7 @@ public class CreateActions {
         Buildings.Town_Center firstTownCenter = new Buildings.Town_Center();
         firstTownCenter.name = "First Town Center";
         Build(firstTownCenter.name);
-        EmpireGame.Engine.townCenterArray.add(firstTownCenter.name);
+        EmpireGame.Engine.townCenterArray.add(firstTownCenter);
     }
 
     public static void initialCreationVillagers(){
@@ -44,6 +44,6 @@ public class CreateActions {
         Buildings.Town_Center newTownCenter = new Buildings.Town_Center();
         newTownCenter.number = EmpireGame.Engine.townCenterArray.size();
         newTownCenter.name = newTownCenter.number + " Town Center";
-        EmpireGame.Engine.villagersArray.add(newTownCenter);
+        EmpireGame.Engine.townCenterArray.add(newTownCenter);
     }
 }
