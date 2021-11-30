@@ -17,6 +17,10 @@ class Npc extends EmpireGame.Engine {
         public String nickname = createNickname();
         String job;
 
+        static String getJob(Villager villager) {
+            return villager.job;
+        }
+
         public String determineGender() {
             Random rand = new Random();
             int genderValue = rand.nextInt(2);

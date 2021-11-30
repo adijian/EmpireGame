@@ -39,18 +39,18 @@ public class Actions {
         }
     }
 
-    public static int jobAssignWoodcutter(Villager villager){
+    public static int jobAssignWoodcutter(Npc.Villager villager){
         try {
-            for (Villager d : Test.villagersArray) {
-                if (d.getJob(villager).equals(" ")) {
+            for (Npc.Villager d : EmpireGame.Engine.villagersArray) {
+                if (Npc.Villager.getJob(villager).equals(" ")) {
                 }
-                Test.villagersArray.remove(villager);
-                Test.villagersWoodcuttingArray.add(villager);
+                EmpireGame.Engine.villagersArray.remove(villager);
+                EmpireGame.Engine.villagersWoodcuttingArray.add(villager);
             }
         }
         catch (Exception e){
 //            System.out.println("No more villagers left");
         }
-        return Test.villagersWoodcuttingArray.size();
+        return EmpireGame.Engine.villagersWoodcuttingArray.size();
     }
 }

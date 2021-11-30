@@ -13,10 +13,10 @@ public class EmpireGame {
              ================*/
             public static ArrayList<Buildings.Town_Center> townCenterArray = new ArrayList<Buildings.Town_Center>();
             public static ArrayList<Npc.Villager> villagersArray = new ArrayList<Npc.Villager>();
-            public static ArrayList<Villager> villagersWoodcuttingArray = new ArrayList<Villager>();
-            public static ArrayList<Villager> villagersFarmingArray = new ArrayList<Villager>();
-            public static ArrayList<Villager> villagersMiningArray = new ArrayList<Villager>();
-            public static ArrayList<Villager> villagersBuildingArray = new ArrayList<Villager>();
+            public static ArrayList<Npc.Villager> villagersWoodcuttingArray = new ArrayList<Npc.Villager>();
+            public static ArrayList<Npc.Villager> villagersFarmingArray = new ArrayList<Npc.Villager>();
+            public static ArrayList<Npc.Villager> villagersMiningArray = new ArrayList<Npc.Villager>();
+            public static ArrayList<Npc.Villager> villagersBuildingArray = new ArrayList<Npc.Villager>();
 
         public static void gameStart(){
             try {
