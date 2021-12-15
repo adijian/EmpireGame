@@ -1,0 +1,8 @@
+<component name="ArtifactManager">
+  <artifact type="jar" name="EmpireGameGUIDemo:jar2">
+    <output-path>$PROJECT_DIR$/out/artifacts/EmpireGameGUIDemo_jar2</output-path>
+    <root id="archive" name="EmpireGame.jar">
+      <element id="module-output" name="EmpireGame" />
+    </root>
+  </artifact>
+</component>
