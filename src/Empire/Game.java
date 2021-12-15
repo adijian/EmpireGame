@@ -25,7 +25,8 @@ public class Game {
     Color colorLightTorquese = new Color(63, 149, 164);
     Color colorDarkTorquese = new Color(21, 49, 54);
     Color colorDarkTintedTorquese = new Color(29, 67, 73);
-    Font font = new Font("Times New Roman", Font.PLAIN,50);
+    Font font = new Font("Times New Roman", Font.PLAIN,40);
+    Font font1 = new Font("Arial", Font.BOLD,10);
 
     JTextArea display;
     JScrollPane scroll;
@@ -35,21 +36,22 @@ public class Game {
     }
 
     public Game() {
+        Frame();
+        topPanel();
+        bottomPanel();
+        panelsNaming();
+        window.setVisible(true);
+    }
+
+    public void Frame() {
         window = new JFrame();
         window.setSize(1920, 1080);
         window.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         window.getContentPane().setBackground(Color.black);
-//        window.setLayout(new FlowLayout(FlowLayout.LEFT, 0, 0));
         window.setLayout(null);
         window.setVisible(true);
         window.setTitle("EmpireGame - GUI Demo");
         window.setExtendedState(JFrame.MAXIMIZED_BOTH);
-//        con = window.getContentPane();
-
-        topPanel();
-        bottomPanel();
-
-        window.setVisible(true);
     }
 
     public void createTopPanels() {
@@ -66,21 +68,32 @@ public class Game {
             jPanels[i].setBorder(BorderFactory.createMatteBorder(2, 10, 12, 6, colorDarkTintedTorquese));
             jPanels[i].setPreferredSize(new Dimension(250, 200));
             System.out.println("createTopPanels method created jPanel number " + i + " description:" + jPanels[i]);
-            
+
             c.fill = GridBagConstraints.RELATIVE;
             c.gridx = 1;
             c.gridy = 0;
             jPanels[i].add(jLabels[i], c);
 
             jButtons[i] = new JButton();
-            jButtons[i].setPreferredSize(new Dimension(50,30));
+            jButtons[i].setPreferredSize(new Dimension(100,30));
             c.fill = GridBagConstraints.RELATIVE;
             c.gridx = 1;
             c.gridy = 2;
+            jButtons[i].setFont(font1);
+            jButtons[i].setText("Transform");
             jPanels[i].add(jButtons[i], c);
 
             topPanel.add(jPanels[i]);
         }
+    }
+
+    public void panelsNaming() {
+        jLabels[0].setText("Citizens");
+        jLabels[1].setText("Farms");
+        jLabels[2].setText("Mining");
+        jLabels[3].setText("Woodcutting");
+        jLabels[4].setText("Builders");
+        jLabels[5].setText("Scholars");
     }
 
     public void topPanel() {
@@ -104,7 +117,7 @@ public class Game {
         bottomLeftPanelScrollTextBox.setBackground(colorLightTorquese);
         bottomLeftPanelScrollTextBox.setBounds(10,250,600,1080-topPanel.getHeight());
 
-        display = new JTextArea(12,16);
+        display = new JTextArea(13,19);
         display.append(":333333333");
         display.setLineWrap(true);
         display.setFont(font);
