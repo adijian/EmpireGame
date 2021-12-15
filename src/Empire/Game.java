@@ -1,22 +1,27 @@
 package Empire;
 
 import javax.swing.*;
+import javax.swing.border.EtchedBorder;
+import javax.swing.border.TitledBorder;
 import java.awt.*;
 import java.net.URL;
 
 public class Game {
     JFrame window;
-    Container con;
-    JPanel topPanel, bottomPanel, bottomLeftPanel;
+    JPanel topPanel, bottomPanel, bottomLeftPanelScrollTextBox;
     JPanel panelCitizens, panelFarms, panelMining, panelWoodcutting, panelBuilders, panelScholars;
     JPanel[] jPanels = {panelCitizens, panelFarms, panelMining, panelWoodcutting, panelBuilders, panelScholars};
     JLabel labelCitizens, labelFarms, labelMining, labelWoodcutting, labelBuilders, labelScholars;
     JLabel[] jLabels = {labelCitizens, labelFarms, labelMining, labelWoodcutting, labelBuilders, labelScholars};
+
     Color colorTorquese = new Color(46, 115, 128);
     Color colorLightTorquese = new Color(63, 149, 164);
     Color colorDarkTorquese = new Color(21, 49, 54);
     Color colorDarkTintedTorquese = new Color(29, 67, 73);
     Font font = new Font("Times New Roman", Font.PLAIN,50);
+
+    JTextArea display;
+    JScrollPane scroll;
 
     public static void main(String[] args) {
         new Game();
@@ -27,14 +32,17 @@ public class Game {
         window.setSize(1920, 1080);
         window.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         window.getContentPane().setBackground(Color.black);
-        window.setLayout(new FlowLayout(FlowLayout.LEFT, 0, 0));
+//        window.setLayout(new FlowLayout(FlowLayout.LEFT, 0, 0));
+        window.setLayout(null);
         window.setVisible(true);
         window.setTitle("EmpireGame - GUI Demo");
         window.setExtendedState(JFrame.MAXIMIZED_BOTH);
-        con = window.getContentPane();
+//        con = window.getContentPane();
 
         topPanel();
         bottomPanel();
+
+        window.setVisible(true);
     }
 
     public void createTopPanels() {
@@ -42,17 +50,18 @@ public class Game {
             jLabels[i] = new JLabel("test");
             jLabels[i].setForeground(Color.black);
             jLabels[i].setFont(font);
+            System.out.println("createTopPanels method created jLabel number " + i + " description:" + jLabels[i]);
 
             jPanels[i] = new JPanel();
             jPanels[i].setBackground(colorTorquese);
             jPanels[i].setBorder(BorderFactory.createMatteBorder(2, 10, 12, 6, colorDarkTintedTorquese));
             jPanels[i].setPreferredSize(new Dimension(250, 200));
+            System.out.println("createTopPanels method created jPanel number " + i + " description:" + jPanels[i]);
 
             jPanels[i].add(jLabels[i]);
 
             topPanel.add(jPanels[i]);
 
-            System.out.println("createTopPanels method created jLabel number " + i + " description:" + jLabels[i]);
         }
     }
 
@@ -63,20 +72,35 @@ public class Game {
         topPanel.setLayout(new FlowLayout(FlowLayout.LEFT, 60,10));
 
         createTopPanels();
-        con.add(topPanel);
+        window.add(topPanel);
     }
 
     public void bottomPanel() {
         bottomPanel = new JPanel();
-        bottomPanel.setBounds(0,topPanel.getHeight(),1920,1080-topPanel.getHeight());
+        bottomPanel.setBounds(0,topPanel.getHeight(), 1920, 1080-topPanel.getHeight());
         bottomPanel.setBackground(colorDarkTintedTorquese);
-        bottomPanel.setLayout(new FlowLayout(FlowLayout.LEFT, 10,10));
-        con.add(bottomPanel);
+        window.add(bottomPanel);
 
-        bottomLeftPanel = new JPanel();
-        bottomLeftPanel.setBounds(20,900,900,500);
-        bottomPanel.setBackground(Color.blue);
-        bottomPanel.add(bottomLeftPanel);
+        bottomLeftPanelScrollTextBox = new JPanel();
+        bottomLeftPanelScrollTextBox.setBackground(colorLightTorquese);
+        bottomLeftPanelScrollTextBox.setBounds(10,250,600,1080-topPanel.getHeight());
+
+        JTextArea display = new JTextArea(12,16);
+        display.append(":333333333");
+        display.setLineWrap(true);
+        display.setFont(font);
+        display.setBackground(colorLightTorquese);
+
+        display.setEditable(true);
+
+        JScrollPane scroll = new JScrollPane(display);
+        scroll.setVerticalScrollBarPolicy(ScrollPaneConstants.VERTICAL_SCROLLBAR_AS_NEEDED);
+
+        bottomLeftPanelScrollTextBox.add(scroll);
+
+        window.add(bottomLeftPanelScrollTextBox);
+        window.setVisible(true);
+//        jLabels[0].setText("wee");
     }
 
 
