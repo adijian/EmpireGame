@@ -3,10 +3,11 @@ package Empire;
 import javax.swing.*;
 import javax.swing.border.EtchedBorder;
 import javax.swing.border.TitledBorder;
+import javax.swing.text.DefaultCaret;
 import java.awt.*;
 import java.net.URL;
 
-public class Game {
+public class GUI {
     JFrame window;
     JPanel topPanel, bottomPanel, bottomLeftPanelScrollTextBox;
     JLabel JLabelButton;
@@ -28,18 +29,23 @@ public class Game {
     Font font = new Font("Times New Roman", Font.PLAIN,40);
     Font font1 = new Font("Arial", Font.BOLD,10);
 
-    JTextArea display;
+    SmartScroller smartScroller;
+
+    public static JTextArea display;
     JScrollPane scroll;
 
     public static void main(String[] args) {
-        new Game();
+        new GUI();
     }
 
-    public Game() {
+    public GUI() {
         Frame();
         topPanel();
         bottomPanel();
         panelsNaming();
+        addActionListenersForButtons();
+
+
         window.setVisible(true);
     }
 
@@ -96,6 +102,12 @@ public class Game {
         jLabels[5].setText("Scholars");
     }
 
+    public void addActionListenersForButtons() {
+        jButtons[0].addActionListener(e -> {
+            CreateActions.createVillagerGui();
+        });
+    }
+
     public void topPanel() {
         topPanel = new JPanel();
         topPanel.setBounds(0,0,1920,220);
@@ -118,7 +130,7 @@ public class Game {
         bottomLeftPanelScrollTextBox.setBounds(10,250,600,1080-topPanel.getHeight());
 
         display = new JTextArea(13,19);
-        display.append(":333333333");
+        display.append("~ Game started ~");
         display.setLineWrap(true);
         display.setFont(font);
         display.setBackground(colorLightTorquese);
@@ -126,13 +138,12 @@ public class Game {
 
         scroll = new JScrollPane(display);
         scroll.setVerticalScrollBarPolicy(ScrollPaneConstants.VERTICAL_SCROLLBAR_AS_NEEDED);
-//        createTopPanels();
+        new SmartScroller(scroll, SmartScroller.HORIZONTAL, SmartScroller.END);
 
         bottomLeftPanelScrollTextBox.add(scroll);
 
         window.add(bottomLeftPanelScrollTextBox);
         window.setVisible(true);
-//        jLabels[0].setText("wee");
     }
 
 

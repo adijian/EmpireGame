@@ -38,7 +38,19 @@ public class CreateActions {
         if (newVillager.gender.equals("male")) {
             System.out.println("A new villager was born and raised.\nHis name is " + newVillager.nickname + ". He is villager number " + newVillager.number + ".");
         }
+    }
 
+    public static void createVillagerGui() {
+        Npc.Villager newVillager1 = new Npc.Villager();
+        newVillager1.number = EmpireGame.Engine.villagersArray.size() + 1;
+        EmpireGame.Engine.villagersArray.add(newVillager1);
+        if (newVillager1.gender.equals("female")) {
+            GUI.display.append("\nA new villager was born and raised.\nHer name is " + newVillager1.nickname + ". \nShe is villager number " + newVillager1.number + ".");
+        }
+
+        if (newVillager1.gender.equals("male")) {
+            GUI.display.append("\nA new villager was born and raised.\nHis name is " + newVillager1.nickname + ". \nHe is villager number " + newVillager1.number + ".");
+        }
     }
     public static void createTownCenter() {
         Buildings.Town_Center newTownCenter = new Buildings.Town_Center();
