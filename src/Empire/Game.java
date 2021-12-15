@@ -9,10 +9,17 @@ import java.net.URL;
 public class Game {
     JFrame window;
     JPanel topPanel, bottomPanel, bottomLeftPanelScrollTextBox;
+    JLabel JLabelButton;
+    JButton jButton1;
+
     JPanel panelCitizens, panelFarms, panelMining, panelWoodcutting, panelBuilders, panelScholars;
     JPanel[] jPanels = {panelCitizens, panelFarms, panelMining, panelWoodcutting, panelBuilders, panelScholars};
+
     JLabel labelCitizens, labelFarms, labelMining, labelWoodcutting, labelBuilders, labelScholars;
     JLabel[] jLabels = {labelCitizens, labelFarms, labelMining, labelWoodcutting, labelBuilders, labelScholars};
+
+    JButton buttonCitizens, buttonFarms, buttonMining, buttonWoodcutting, buttonBuilders, buttonScholars;
+    JButton[] jButtons = {buttonCitizens, buttonFarms, buttonMining, buttonWoodcutting, buttonBuilders, buttonScholars};
 
     Color colorTorquese = new Color(46, 115, 128);
     Color colorLightTorquese = new Color(63, 149, 164);
@@ -53,15 +60,26 @@ public class Game {
             System.out.println("createTopPanels method created jLabel number " + i + " description:" + jLabels[i]);
 
             jPanels[i] = new JPanel();
+            jPanels[i].setLayout(new GridBagLayout());
+            GridBagConstraints c = new GridBagConstraints();
             jPanels[i].setBackground(colorTorquese);
             jPanels[i].setBorder(BorderFactory.createMatteBorder(2, 10, 12, 6, colorDarkTintedTorquese));
             jPanels[i].setPreferredSize(new Dimension(250, 200));
             System.out.println("createTopPanels method created jPanel number " + i + " description:" + jPanels[i]);
+            
+            c.fill = GridBagConstraints.RELATIVE;
+            c.gridx = 1;
+            c.gridy = 0;
+            jPanels[i].add(jLabels[i], c);
 
-            jPanels[i].add(jLabels[i]);
+            jButtons[i] = new JButton();
+            jButtons[i].setPreferredSize(new Dimension(50,30));
+            c.fill = GridBagConstraints.RELATIVE;
+            c.gridx = 1;
+            c.gridy = 2;
+            jPanels[i].add(jButtons[i], c);
 
             topPanel.add(jPanels[i]);
-
         }
     }
 
@@ -72,6 +90,7 @@ public class Game {
         topPanel.setLayout(new FlowLayout(FlowLayout.LEFT, 60,10));
 
         createTopPanels();
+
         window.add(topPanel);
     }
 
@@ -85,16 +104,16 @@ public class Game {
         bottomLeftPanelScrollTextBox.setBackground(colorLightTorquese);
         bottomLeftPanelScrollTextBox.setBounds(10,250,600,1080-topPanel.getHeight());
 
-        JTextArea display = new JTextArea(12,16);
+        display = new JTextArea(12,16);
         display.append(":333333333");
         display.setLineWrap(true);
         display.setFont(font);
         display.setBackground(colorLightTorquese);
-
         display.setEditable(true);
 
-        JScrollPane scroll = new JScrollPane(display);
+        scroll = new JScrollPane(display);
         scroll.setVerticalScrollBarPolicy(ScrollPaneConstants.VERTICAL_SCROLLBAR_AS_NEEDED);
+//        createTopPanels();
 
         bottomLeftPanelScrollTextBox.add(scroll);
 

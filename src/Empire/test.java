@@ -3,30 +3,31 @@ package Empire;
 import javax.swing.*;
 import javax.swing.border.EtchedBorder;
 import javax.swing.border.TitledBorder;
+import java.awt.*;
 
 public class test {
     public static void main ( String[] args )
     {
-        JPanel middlePanel = new JPanel ();
-        middlePanel.setBorder ( new TitledBorder( new EtchedBorder(), "Display Area" ) );
+        JButton jbutton = new JButton();
+        JLabel jlabel = new JLabel("meow");
+        JPanel jpanel = new JPanel();
+        JFrame jframe = new JFrame();
+        jframe.setLayout(null);
+        jframe.getContentPane().setBackground(Color.blue);
+        jframe.setSize(500, 500);
 
-        // create the middle panel components
 
-        JTextArea display = new JTextArea ( 16, 58 );
-        display.append(":33333333333333333333333333333333333333333333333333333333333333333333333333");
-
-        display.setEditable ( true ); // set textArea non-editable
-        JScrollPane scroll = new JScrollPane ( display );
-        scroll.setVerticalScrollBarPolicy ( ScrollPaneConstants.VERTICAL_SCROLLBAR_AS_NEEDED );
-
-        //Add Textarea in to middle panel
-        middlePanel.add ( scroll );
-
-        // My code
-        JFrame frame = new JFrame ();
-        frame.add ( middlePanel );
-        frame.pack ();
-        frame.setLocationRelativeTo ( null );
-        frame.setVisible ( true );
+        jbutton.setBackground(Color.green);
+        jbutton.setBounds(0,0,125,125);
+        jlabel.setBackground(Color.orange);
+        jlabel.setBounds(0,0,125,125);
+        jlabel.setLayout(null);
+        jlabel.add(jbutton);
+        jpanel.setBackground(Color.white);
+        jpanel.setBounds(0,0,250,250);
+        jpanel.setLayout(null);
+        jpanel.add(jlabel);
+        jframe.add(jpanel);
+        jframe.setVisible(true);
     }
 }
