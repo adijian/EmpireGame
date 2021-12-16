@@ -90,7 +90,7 @@ public class GUI {
     }
 
     public void panelsNaming() {
-        jLabels[0].setText("Citizens");
+        jLabels[0].setText("Citizens " + EmpireGame.Engine.villagersArray.size());
         jLabels[1].setText("Farmers");
         jLabels[2].setText("Miners");
         jLabels[3].setText("Woodcutters");
@@ -101,6 +101,13 @@ public class GUI {
     public void addActionListenersForButtons() {
         jButtons[0].addActionListener(e -> {
             CreateActions.createVillagerGui();
+            panelsNaming();
+        });
+        jButtons[1].addActionListener(e -> {
+            GUI.display.append("\njButton1");
+        });
+        jButtons[2].addActionListener(e -> {
+            GUI.display.append("\njButton2");
         });
     }
 
