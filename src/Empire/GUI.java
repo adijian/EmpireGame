@@ -91,9 +91,9 @@ public class GUI {
 
     public void panelsNaming() {
         jLabels[0].setText("Citizens");
-        jLabels[1].setText("Farms");
-        jLabels[2].setText("Mining");
-        jLabels[3].setText("Woodcutting");
+        jLabels[1].setText("Farmers");
+        jLabels[2].setText("Miners");
+        jLabels[3].setText("Woodcutters");
         jLabels[4].setText("Builders");
         jLabels[5].setText("Scholars");
     }
