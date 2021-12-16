@@ -10,8 +10,6 @@ import java.net.URL;
 public class GUI {
     JFrame window;
     JPanel topPanel, bottomPanel, bottomLeftPanelScrollTextBox;
-    JLabel JLabelButton;
-    JButton jButton1;
 
     JPanel panelCitizens, panelFarms, panelMining, panelWoodcutting, panelBuilders, panelScholars;
     JPanel[] jPanels = {panelCitizens, panelFarms, panelMining, panelWoodcutting, panelBuilders, panelScholars};
@@ -22,15 +20,13 @@ public class GUI {
     JButton buttonCitizens, buttonFarms, buttonMining, buttonWoodcutting, buttonBuilders, buttonScholars;
     JButton[] jButtons = {buttonCitizens, buttonFarms, buttonMining, buttonWoodcutting, buttonBuilders, buttonScholars};
 
-    Color colorTorquese = new Color(46, 115, 128);
+    Color colorTorquese = new Color(43, 104, 115);
     Color colorLightTorquese = new Color(63, 149, 164);
     Color colorDarkTorquese = new Color(21, 49, 54);
     Color colorDarkTintedTorquese = new Color(29, 67, 73);
     Font font = new Font("Times New Roman", Font.PLAIN,40);
     Font font1 = new Font("Arial", Font.BOLD,10);
-
-    SmartScroller smartScroller;
-
+    
     public static JTextArea display;
     JScrollPane scroll;
 
@@ -70,7 +66,7 @@ public class GUI {
             jPanels[i] = new JPanel();
             jPanels[i].setLayout(new GridBagLayout());
             GridBagConstraints c = new GridBagConstraints();
-            jPanels[i].setBackground(colorTorquese);
+            jPanels[i].setBackground(colorLightTorquese);
             jPanels[i].setBorder(BorderFactory.createMatteBorder(2, 10, 12, 6, colorDarkTintedTorquese));
             jPanels[i].setPreferredSize(new Dimension(250, 200));
             System.out.println("createTopPanels method created jPanel number " + i + " description:" + jPanels[i]);
@@ -111,7 +107,7 @@ public class GUI {
     public void topPanel() {
         topPanel = new JPanel();
         topPanel.setBounds(0,0,1920,220);
-        topPanel.setBackground(colorLightTorquese);
+        topPanel.setBackground(colorTorquese);
         topPanel.setLayout(new FlowLayout(FlowLayout.LEFT, 60,10));
 
         createTopPanels();
@@ -122,14 +118,16 @@ public class GUI {
     public void bottomPanel() {
         bottomPanel = new JPanel();
         bottomPanel.setBounds(0,topPanel.getHeight(), 1920, 1080-topPanel.getHeight());
-        bottomPanel.setBackground(colorDarkTintedTorquese);
+        bottomPanel.setBackground(colorDarkTorquese);
         window.add(bottomPanel);
 
         bottomLeftPanelScrollTextBox = new JPanel();
         bottomLeftPanelScrollTextBox.setBackground(colorLightTorquese);
         bottomLeftPanelScrollTextBox.setBounds(10,250,600,1080-topPanel.getHeight());
 
-        display = new JTextArea(13,19);
+        display = new JTextArea(15,19);
+        DefaultCaret caret = (DefaultCaret)display.getCaret();
+        caret.setUpdatePolicy(DefaultCaret.ALWAYS_UPDATE);
         display.append("~ Game started ~");
         display.setLineWrap(true);
         display.setFont(font);
@@ -137,8 +135,6 @@ public class GUI {
         display.setEditable(true);
 
         scroll = new JScrollPane(display);
-        scroll.setVerticalScrollBarPolicy(ScrollPaneConstants.VERTICAL_SCROLLBAR_AS_NEEDED);
-        new SmartScroller(scroll, SmartScroller.HORIZONTAL, SmartScroller.END);
 
         bottomLeftPanelScrollTextBox.add(scroll);
 
