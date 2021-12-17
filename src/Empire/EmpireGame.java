@@ -32,8 +32,9 @@ public class EmpireGame {
 
     public static GUI GameRun;
 
-    public static void main(String[] args) {
+    public static void main(String[] args) throws InterruptedException {
         GameRun = new GUI();
         EmpireGame.Engine.gameStart();
+        Counter.main();
     }
 }

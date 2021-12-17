@@ -7,7 +7,8 @@ import java.net.URL;
 
 public class GUI {
     JFrame window;
-    JPanel topPanel, bottomPanel, bottomLeftPanelScrollTextBox, coffersPanel;
+    JPanel topPanel, bottomLeftPanelScrollTextBox, coffersPanel;
+//    JLabel coffersLabel;
 
     JPanel panelCitizens, panelFarms, panelMining, panelWoodcutting, panelBuilders, panelScholars;
     JPanel[] jPanels = {panelCitizens, panelFarms, panelMining, panelWoodcutting, panelBuilders, panelScholars};
@@ -26,7 +27,7 @@ public class GUI {
     Font font2 = new Font("Times New Roman", Font.PLAIN,30);
     Font font1 = new Font("Arial", Font.BOLD,10);
     
-    public static JTextArea display;
+    public static JTextArea display, coffersLabel;
     JScrollPane scroll;
 
     public GUI() {
@@ -129,7 +130,7 @@ public class GUI {
         display.setLineWrap(true);
         display.setFont(font2);
         display.setBackground(colorLightTorquese);
-        display.setEditable(true);
+        display.setEditable(false);
 
         scroll = new JScrollPane(display);
         bottomLeftPanelScrollTextBox.add(scroll);
@@ -143,7 +144,20 @@ public class GUI {
         coffersPanel.setBackground(colorLightTorquese);
         coffersPanel.setBounds(620,250,250,200);
 
+        coffersLabel = new JTextArea(6,10);
+        coffersLabel.setForeground(Color.black);
+        coffersLabel.setBackground(colorLightTorquese);
+        coffersLabel.setFont(font2);
+        coffersLabel.setLineWrap(true);
+        coffersLabel.setText(String.valueOf(Counter.logs));
+        coffersLabel.setEditable(false);
+
+        coffersPanel.add(coffersLabel);
         window.add(coffersPanel);
+    }
+
+    public void coffersPanelUpdate() {
+        coffersLabel.setText("Logs: " + Counter.logs);
     }
 
     public void bottomPanel() {
