@@ -7,7 +7,7 @@ import java.net.URL;
 
 public class GUI {
     JFrame window;
-    JPanel topPanel, bottomPanel, bottomLeftPanelScrollTextBox;
+    JPanel topPanel, bottomPanel, bottomLeftPanelScrollTextBox, coffersPanel;
 
     JPanel panelCitizens, panelFarms, panelMining, panelWoodcutting, panelBuilders, panelScholars;
     JPanel[] jPanels = {panelCitizens, panelFarms, panelMining, panelWoodcutting, panelBuilders, panelScholars};
@@ -29,10 +29,6 @@ public class GUI {
     public static JTextArea display;
     JScrollPane scroll;
 
-//    public static void main(String[] args) {
-//        new GUI();
-//    }
-
     public GUI() {
         Frame();
         topPanel();
@@ -47,7 +43,7 @@ public class GUI {
         window = new JFrame();
         window.setSize(1920, 1080);
         window.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-        window.getContentPane().setBackground(Color.black);
+        window.getContentPane().setBackground(colorDarkTorquese);
         window.setLayout(null);
         window.setVisible(true);
         window.setTitle("EmpireGame - GUI Demo");
@@ -66,7 +62,7 @@ public class GUI {
             GridBagConstraints c = new GridBagConstraints();
             jPanels[i].setBackground(colorLightTorquese);
             jPanels[i].setBorder(BorderFactory.createMatteBorder(2, 10, 12, 6, colorDarkTintedTorquese));
-            jPanels[i].setPreferredSize(new Dimension(250, 200));
+            jPanels[i].setPreferredSize(new Dimension(250, topPanel.getHeight()));
             System.out.println("createTopPanels method created jPanel number " + i + " description:" + jPanels[i]);
 
             c.fill = GridBagConstraints.RELATIVE;
@@ -112,7 +108,7 @@ public class GUI {
 
     public void topPanel() {
         topPanel = new JPanel();
-        topPanel.setBounds(0,0,1920,220);
+        topPanel.setBounds(0,0,window.getWidth(),220);
         topPanel.setBackground(colorTorquese);
         topPanel.setLayout(new FlowLayout(FlowLayout.LEFT, 60,10));
 
@@ -121,16 +117,11 @@ public class GUI {
         window.add(topPanel);
     }
 
-    public void bottomPanel() {
-        bottomPanel = new JPanel();
-        bottomPanel.setBounds(0,topPanel.getHeight(), 1920, 1080-topPanel.getHeight());
-        bottomPanel.setBackground(colorDarkTorquese);
-        window.add(bottomPanel);
-
+    public void bottomLeftPanel() {
+        // bottom left panel with scrolling text box
         bottomLeftPanelScrollTextBox = new JPanel();
         bottomLeftPanelScrollTextBox.setBackground(colorLightTorquese);
         bottomLeftPanelScrollTextBox.setBounds(10,250,600,1080-topPanel.getHeight());
-
         display = new JTextArea(20,25);
         DefaultCaret caret = (DefaultCaret)display.getCaret();
         caret.setUpdatePolicy(DefaultCaret.ALWAYS_UPDATE);
@@ -141,11 +132,23 @@ public class GUI {
         display.setEditable(true);
 
         scroll = new JScrollPane(display);
-
         bottomLeftPanelScrollTextBox.add(scroll);
 
         window.add(bottomLeftPanelScrollTextBox);
-        window.setVisible(true);
+
+    }
+
+    public void coffersPanel() {
+        coffersPanel = new JPanel();
+        coffersPanel.setBackground(colorLightTorquese);
+        coffersPanel.setBounds(620,250,250,200);
+
+        window.add(coffersPanel);
+    }
+
+    public void bottomPanel() {
+        coffersPanel();
+        bottomLeftPanel();
     }
 
 

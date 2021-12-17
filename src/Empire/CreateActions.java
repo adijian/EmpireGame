@@ -45,15 +45,4 @@ public class CreateActions {
     public static void initialCreationTownCenter() {
 
     }
-
-    // Each game provides the player with a town center, 4 villagers and a horse.
-//    public static void initialCreationTownCenter(){
-//        System.out.println("Building the First Town Center.");
-//        Buildings.Town_Center firstTownCenter = new Buildings.Town_Center();
-//        firstTownCenter.name = "First Town Center";
-//        Build(firstTownCenter.name);
-//        EmpireGame.Engine.townCenterArray.add(firstTownCenter);
-//    }
-
-
 }
