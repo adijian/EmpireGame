@@ -1,8 +1,6 @@
 package Empire;
 
 import javax.swing.*;
-import javax.swing.border.EtchedBorder;
-import javax.swing.border.TitledBorder;
 import javax.swing.text.DefaultCaret;
 import java.awt.*;
 import java.net.URL;
@@ -25,6 +23,7 @@ public class GUI {
     Color colorDarkTorquese = new Color(21, 49, 54);
     Color colorDarkTintedTorquese = new Color(29, 67, 73);
     Font font = new Font("Times New Roman", Font.PLAIN,40);
+    Font font2 = new Font("Times New Roman", Font.PLAIN,30);
     Font font1 = new Font("Arial", Font.BOLD,10);
     
     public static JTextArea display;
@@ -77,6 +76,7 @@ public class GUI {
             jPanels[i].add(jLabels[i], c);
 
             jButtons[i] = new JButton();
+            jButtons[i].setFocusPainted(false);
             jButtons[i].setPreferredSize(new Dimension(100,30));
             c.fill = GridBagConstraints.RELATIVE;
             c.gridx = 1;
@@ -90,12 +90,13 @@ public class GUI {
     }
 
     public void panelsNaming() {
-        jLabels[0].setText("Citizens " + EmpireGame.Engine.villagersArray.size());
-        jLabels[1].setText("Farmers");
-        jLabels[2].setText("Miners");
-        jLabels[3].setText("Woodcutters");
-        jLabels[4].setText("Builders");
-        jLabels[5].setText("Scholars");
+        jLabels[0].setText("Citizens: " + EmpireGame.Engine.villagersArray.size());
+        jButtons[0].setText("Create");
+        jLabels[1].setText("Farmers: ");
+        jLabels[2].setText("Miners: ");
+        jLabels[3].setText("Woodcutters: ");
+        jLabels[4].setText("Builders: ");
+        jLabels[5].setText("Scholars: ");
     }
 
     public void addActionListenersForButtons() {
@@ -132,12 +133,12 @@ public class GUI {
         bottomLeftPanelScrollTextBox.setBackground(colorLightTorquese);
         bottomLeftPanelScrollTextBox.setBounds(10,250,600,1080-topPanel.getHeight());
 
-        display = new JTextArea(15,19);
+        display = new JTextArea(20,25);
         DefaultCaret caret = (DefaultCaret)display.getCaret();
         caret.setUpdatePolicy(DefaultCaret.ALWAYS_UPDATE);
         display.append("~ Game started ~");
         display.setLineWrap(true);
-        display.setFont(font);
+        display.setFont(font2);
         display.setBackground(colorLightTorquese);
         display.setEditable(true);
 

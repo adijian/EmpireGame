@@ -40,6 +40,13 @@ public class CreateActions {
         }
     }
 
+    public static void createTownCenter() {
+        Buildings.Town_Center newTownCenter = new Buildings.Town_Center();
+        newTownCenter.number = EmpireGame.Engine.townCenterArray.size();
+        newTownCenter.name = newTownCenter.number + " Town Center";
+        EmpireGame.Engine.townCenterArray.add(newTownCenter);
+    }
+
     public static void createVillagerGui() {
         Npc.Villager newVillager1 = new Npc.Villager();
         newVillager1.number = EmpireGame.Engine.villagersArray.size() + 1;
@@ -51,11 +58,5 @@ public class CreateActions {
         if (newVillager1.gender.equals("male")) {
             GUI.display.append("\nA new villager was born and raised.\nHis name is " + newVillager1.nickname + ". \nHe is villager number " + newVillager1.number + ".");
         }
-    }
-    public static void createTownCenter() {
-        Buildings.Town_Center newTownCenter = new Buildings.Town_Center();
-        newTownCenter.number = EmpireGame.Engine.townCenterArray.size();
-        newTownCenter.name = newTownCenter.number + " Town Center";
-        EmpireGame.Engine.townCenterArray.add(newTownCenter);
     }
 }
