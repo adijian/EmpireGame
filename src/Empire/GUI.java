@@ -29,9 +29,9 @@ public class GUI {
     public static JTextArea display;
     JScrollPane scroll;
 
-    public static void main(String[] args) {
-        new GUI();
-    }
+//    public static void main(String[] args) {
+//        new GUI();
+//    }
 
     public GUI() {
         Frame();
@@ -39,7 +39,6 @@ public class GUI {
         bottomPanel();
         panelsNaming();
         addActionListenersForButtons();
-
 
         window.setVisible(true);
     }
@@ -102,7 +101,6 @@ public class GUI {
     public void addActionListenersForButtons() {
         jButtons[0].addActionListener(e -> {
             CreateActions.createVillagerGui();
-            panelsNaming();
         });
         jButtons[1].addActionListener(e -> {
             GUI.display.append("\njButton1");

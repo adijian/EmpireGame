@@ -11,7 +11,7 @@ public class Buildings {
         public String name = " ";
 
         void createVillagerFromTownCenter() {
-            CreateActions.createVillager();
+            CreateActions.createVillagerGui();
         }
     }
 }

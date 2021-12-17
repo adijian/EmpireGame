@@ -34,7 +34,7 @@ public class Actions {
             EmpireGame.Engine.villagersArray.remove(chosenVillager);
         }
         catch (Exception e){
-            EmpireGame.Engine.userActionsInput();
+//            EmpireGame.Engine.userActionsInput();
             System.out.println("Not an action. Choose your destiny wisely.");
         }
     }
