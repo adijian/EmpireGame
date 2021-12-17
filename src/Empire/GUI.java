@@ -88,7 +88,7 @@ public class GUI {
     public void panelsNaming() {
         jLabels[0].setText("Citizens: " + EmpireGame.Engine.villagersArray.size());
         jButtons[0].setText("Create");
-        jLabels[1].setText("Farmers: ");
+        jLabels[1].setText("Farmers: " + EmpireGame.Engine.villagersFarmingArray.size());
         jLabels[2].setText("Miners: ");
         jLabels[3].setText("Woodcutters: ");
         jLabels[4].setText("Builders: ");
@@ -100,7 +100,8 @@ public class GUI {
             CreateActions.createVillagerGui();
         });
         jButtons[1].addActionListener(e -> {
-            GUI.display.append("\njButton1");
+//            GUI.display.append("\njButton1");
+            CreateActions.transformVillagerstoFarmers();
         });
         jButtons[2].addActionListener(e -> {
             GUI.display.append("\njButton2");
@@ -149,7 +150,7 @@ public class GUI {
         coffersLabel.setBackground(colorLightTorquese);
         coffersLabel.setFont(font2);
         coffersLabel.setLineWrap(true);
-        coffersLabel.setText(String.valueOf(Counter.logs));
+        coffersLabel.setText(String.valueOf(Counter.honey));
         coffersLabel.setEditable(false);
 
         coffersPanel.add(coffersLabel);
@@ -157,7 +158,7 @@ public class GUI {
     }
 
     public void coffersPanelUpdate() {
-        coffersLabel.setText("Logs: " + Counter.logs);
+        coffersLabel.setText("Coffers\n" + "Honey: " + Counter.honey);
     }
 
     public void bottomPanel() {

@@ -1,5 +1,7 @@
 package Empire;
 
+import java.util.Random;
+
 public class CreateActions {
 
     public static void createVillagerGui() {
@@ -20,6 +22,18 @@ public class CreateActions {
 
     }
 
+        public static void transformVillagerstoFarmers() {
+        Random r=new Random();
+        int randomNumber=r.nextInt(EmpireGame.Engine.villagersArray.size());
+        Npc.Villager randomVillager = EmpireGame.Engine.villagersArray.get(randomNumber);
+
+        EmpireGame.Engine.villagersArray.remove(randomVillager);
+        EmpireGame.Engine.villagersFarmingArray.add(randomVillager);
+
+        GUI.display.append("\n" + randomVillager.nickname + " transformed to a farmer.");
+        EmpireGame.GameRun.panelsNaming();
+
+        }
         public static void Build(String building_built) {
         System.out.println(building_built + " has been built.");
     }

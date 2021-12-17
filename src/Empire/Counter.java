@@ -1,28 +1,19 @@
 package Empire;
 
-import java.util.concurrent.TimeUnit;
-
 public class Counter {
-    public static long logs = 1;
-    public static int woodcutters = 2;
-    public int woodcuttersGatheringTime = 60000;
-    public double woodcuttersTimeModifier = 0.01;
-    public double GatheringSpeedmodifier = 1.1;
+    public static long honey = 0;
+    public double farmersGatherBatch = 7.5;
+    public int farmersGatheringDelay = 60000;
+    public double farmersSpeedModifier = 0.1;
 
-    public void setLogs(int logsNewNumber) {
-        logs = logsNewNumber;
+    public void setHoney(int honeyNewNumber) {
+        honey += honeyNewNumber;
     }
 
-    public static void main () throws InterruptedException {
+    public void main () {
         Thread t1 = new Thread(new Counter().new RunnableImpl());
-        t1.start();
-        Counter.woodcuttersIncrement();
-    }
-
-    public static void woodcuttersIncrement() throws InterruptedException {
-        for(int i = 0; i<500; i++) {
-            woodcutters += 1;
-            TimeUnit.SECONDS.sleep(20);
+        if (honey>0) {
+            t1.start();
         }
     }
 
@@ -31,10 +22,13 @@ public class Counter {
         public void run() {
             while (true) {
                 try {
-                    int logsAccumulated = (int) (logs + (woodcutters * GatheringSpeedmodifier));
-                    setLogs(logsAccumulated);
-                    System.out.println("logs set to: " + logsAccumulated);
-//                    GUI.coffersPanel();
+                    setHoney((int) (EmpireGame.Engine.villagersFarmingArray.size() * farmersGatherBatch));
+                    System.out.println(
+                                    "\nnumber of villagers * farmersGatherBatch" +
+                                    "\nHoney set to: " + honey +
+                                    "\nfarmersGatherBatch: " + farmersGatherBatch +
+                                    "\nfarmersSpeedModifier: " + farmersSpeedModifier +
+                                    "\nfarmersGatheringDelay:  " + farmersGatheringDelay);
                     EmpireGame.GameRun.coffersPanelUpdate();
 
                 } catch (Exception e) {
@@ -42,7 +36,8 @@ public class Counter {
                 }
 
                 try {
-                    Thread.sleep((long) (woodcuttersGatheringTime * woodcuttersTimeModifier));
+                    System.out.println("\nfarmersGatheringDelay * farmersSpeedModifier");
+                    Thread.sleep((long) (farmersGatheringDelay * farmersSpeedModifier));
                 }
 
                 catch (InterruptedException e) {
