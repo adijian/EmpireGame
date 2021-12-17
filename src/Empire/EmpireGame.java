@@ -31,11 +31,10 @@ public class EmpireGame {
      ================*/
 
     public static GUI GameRun;
-    public static Counter CounterRun;
 
     public static void main(String[] args) {
         GameRun = new GUI();
         EmpireGame.Engine.gameStart();
-        CounterRun.main();
+        Counter.main();
     }
 }
