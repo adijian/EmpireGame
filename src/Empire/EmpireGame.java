@@ -18,7 +18,7 @@ public class EmpireGame {
         public static ArrayList<Npc.Villager> villagersWoodcuttingArray = new ArrayList<>();
         public static ArrayList<Npc.Villager> villagersFarmingArray = new ArrayList<>();
         public static ArrayList<Npc.Villager> villagersMiningArray = new ArrayList<>();
-        public static ArrayList<Npc.Villager> villagersBuildingArray = new ArrayList<>();
+        public static ArrayList<Npc.Villager> villagersBuildersArray = new ArrayList<>();
         public static ArrayList<Npc.Villager> villlagersScholarsArray = new ArrayList<>();
 
     public static void gameStart(){
