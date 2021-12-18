@@ -25,10 +25,10 @@ public class Counter {
                     System.out.println(
                                     "EmpireGame.Engine.villagersFarmingArray.size() * farmersGatherBatch * gatheringSpeedmodifier)" +
                                     "\nHoney set to: " + honey +
-                                    " \nfarmersGatherBatch: " + farmersGatherBatch +
-                                    " \ngatheringSpeedmodifier: " + gatheringSpeedmodifier +
-                                    " \nfarmersTimeModifier: " + farmersTimeModifier +
-                                    " \nfarmersGatheringtime:  " + farmersGatheringTime);
+                                    "\nfarmersGatherBatch: " + farmersGatherBatch +
+                                    "\ngatheringSpeedmodifier: " + gatheringSpeedmodifier +
+                                    "\nfarmersTimeModifier: " + farmersTimeModifier +
+                                    "\nfarmersGatheringtime:  " + farmersGatheringTime);
                     EmpireGame.GameRun.coffersPanelUpdate();
 
                 } catch (Exception e) {
