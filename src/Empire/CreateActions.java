@@ -1,5 +1,6 @@
 package Empire;
 
+import java.util.ArrayList;
 import java.util.Random;
 
 public class CreateActions {
@@ -22,18 +23,43 @@ public class CreateActions {
 
     }
 
-        public static void transformVillagerstoFarmers() {
-        Random r=new Random();
-        int randomNumber=r.nextInt(EmpireGame.Engine.villagersArray.size());
-        Npc.Villager randomVillager = EmpireGame.Engine.villagersArray.get(randomNumber);
+        public static void transformVillagers(ArrayList<Npc.Villager> fromArray, ArrayList<Npc.Villager> toArray) {
+            Random r=new Random();
+            int randomNumber=r.nextInt(fromArray.size());
+            Npc.Villager randomVillager = fromArray.get(randomNumber);
 
-        EmpireGame.Engine.villagersArray.remove(randomVillager);
-        EmpireGame.Engine.villagersFarmingArray.add(randomVillager);
+            fromArray.remove(randomVillager);
+            toArray.add(randomVillager);
 
-        GUI.display.append("\n" + randomVillager.nickname + " transformed to a farmer.");
-        EmpireGame.GameRun.panelsNaming();
+            if (toArray == EmpireGame.Engine.villagersWoodcuttingArray) {
+                GUI.display.append("\n" + randomVillager.nickname + " transformed to a maple woodcutter.");
+
+            }
+            if (toArray == EmpireGame.Engine.villagersFarmingArray) {
+                GUI.display.append("\n" + randomVillager.nickname + " transformed to a honey farmer.");
+
+            }
+            if (toArray == EmpireGame.Engine.villagersBuildingArray) {
+                GUI.display.append("\n" + randomVillager.nickname + " transformed to a den builder.");
+
+            }
+            if (toArray == EmpireGame.Engine.villagersMiningArray) {
+                GUI.display.append("\n" + randomVillager.nickname + " transformed to a caves miner.");
+
+            }
+            if (toArray == EmpireGame.Engine.villlagersScholarsArray) {
+                GUI.display.append("\n" + randomVillager.nickname + " transformed to an educated scholar.");
+
+            }
+            if (toArray == EmpireGame.Engine.villagersArray) {
+                GUI.display.append("\n" + randomVillager.nickname + " has gone idle.");
+
+            }
+
+            EmpireGame.GameRun.panelsNaming();
 
         }
+
         public static void Build(String building_built) {
         System.out.println(building_built + " has been built.");
     }
