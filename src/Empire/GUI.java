@@ -10,10 +10,10 @@ public class GUI {
     JFrame window;
     JPanel topPanel, bottomLeftPanelScrollTextBox, coffersPanel;
 
-    JPanel panelCitizens, panelFarms, panelMining, panelWoodcutting, panelBuilders, panelScholars;
+    public JPanel panelCitizens, panelFarms, panelMining, panelWoodcutting, panelBuilders, panelScholars;
     JPanel[] jPanels = {panelCitizens, panelFarms, panelMining, panelWoodcutting, panelBuilders, panelScholars};
 
-    JLabel labelCitizens, labelFarms, labelMining, labelWoodcutting, labelBuilders, labelScholars;
+    public JLabel labelCitizens, labelFarms, labelMining, labelWoodcutting, labelBuilders, labelScholars;
     JLabel[] jLabels = {labelCitizens, labelFarms, labelMining, labelWoodcutting, labelBuilders, labelScholars};
 
     JButton buttonCitizens, buttonFarms, buttonMining, buttonWoodcutting, buttonBuilders, buttonScholars;
@@ -61,7 +61,7 @@ public class GUI {
         Frame();
         topPanel();
         bottomPanel();
-//        addActionListenersForButtons();
+        addActionListenersForButtons();
 
         window.setVisible(true);
     }
@@ -79,7 +79,8 @@ public class GUI {
 
     public void topPanelsCreation(JPanel jpanel, JLabel jlabel, JButton[] jButtons, String nameOfLabel, ArrayList<Npc.Villager> arrayList, String[] buttonStrings) {
         GridBagConstraints c = new GridBagConstraints();
-        jlabel = new JLabel(nameOfLabel + ": " + arrayList.size());
+        jlabel = new JLabel();
+        jlabel.setText(nameOfLabel + ": " + arrayList.size());
         jlabel.setForeground(Color.black);
         jlabel.setFont(font2);
 //        System.out.println("createTopPanels method created jLabel number " + i + " description:" + jLabels[i]);
@@ -121,14 +122,30 @@ public class GUI {
         topPanelsCreation(panelScholars, labelScholars, jButtonsScholars, "Scholars", EmpireGame.Engine.villlagersScholarsArray, ScholarsButtonsStrings);
     }
 
-    public void panelsNaming(String string, ArrayList<Npc.Villager> arrayList, JLabel jlabel) {
-        jlabel.setText(string + ": " + arrayList.size());
+    public void panelsNaming() {
+        jLabels[0].setText("Citizens: " + EmpireGame.Engine.villagersArray.size());
     }
 
     public void addActionListenersForButtons() {
-//        jButtons[0].addActionListener(e -> {
-//            CreateActions.createVillagerGui();
-//        });
+        jButtonsCitizens[0].addActionListener(e -> {
+            CreateActions.createVillagerGui();
+        });
+        jButtonsCitizens[1].addActionListener(e -> {
+            CreateActions.transformVillagers(EmpireGame.Engine.villagersArray, EmpireGame.Engine.villagersFarmingArray);
+            labelCitizens.setText("Citizens: " + EmpireGame.Engine.villagersArray.size());
+        });
+        jButtonsCitizens[2].addActionListener(e -> {
+            CreateActions.createVillagerGui();
+        });
+        jButtonsCitizens[3].addActionListener(e -> {
+            CreateActions.createVillagerGui();
+        });
+        jButtonsCitizens[4].addActionListener(e -> {
+            CreateActions.createVillagerGui();
+        });
+        jButtonsCitizens[5].addActionListener(e -> {
+            CreateActions.createVillagerGui();
+        });
     }
 
     public void topPanel() {
