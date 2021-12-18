@@ -6,7 +6,6 @@ public class Counter {
     public double farmersGatherBatch = 7.5;
     public double farmersTimeModifier = 0.1;
     public double gatheringSpeedmodifier = 0.50;
-    public static Thread t1;
 
     public void setHoney(int honeyNewNumber) {
         honey += honeyNewNumber;
@@ -20,7 +19,7 @@ public class Counter {
     private class RunnableImpl implements Runnable {
 
         public void run() {
-            while (Counter.t1 != null) {
+            while (true) {
                 try {
                     setHoney((int) (EmpireGame.Engine.villagersFarmingArray.size() * farmersGatherBatch * gatheringSpeedmodifier));
                     System.out.println(
