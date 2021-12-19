@@ -330,6 +330,7 @@ public class GUI {
     }
 
     public void addActionListenersForButtons() {
+        //Buttons Citizens
         buttonCitizens.addActionListener(e -> {
             CreateActions.createVillagerGui();
         });
@@ -342,9 +343,38 @@ public class GUI {
         buttonCitizenstoWoodcutters.addActionListener(e -> {
             CreateActions.transformVillagers(EmpireGame.Engine.villagersArray, EmpireGame.Engine.villagersWoodcuttingArray);
         });
+        buttonCitizenstoBuilders.addActionListener(e -> {
+            CreateActions.transformVillagers(EmpireGame.Engine.villagersArray, EmpireGame.Engine.villagersBuildersArray);
+        });
         buttonCitizenstoScholars.addActionListener(e -> {
             CreateActions.transformVillagers(EmpireGame.Engine.villagersArray, EmpireGame.Engine.villlagersScholarsArray);
         });
+
+        //ButtonsFarmers
+        buttonFarmstoCitizens.addActionListener(e -> {
+            CreateActions.transformVillagers(EmpireGame.Engine.villagersFarmingArray, EmpireGame.Engine.villagersArray);
+        });
+
+        //ButtonsMiners
+        buttonMinerstoCitizens.addActionListener(e -> {
+            CreateActions.transformVillagers(EmpireGame.Engine.villagersMiningArray, EmpireGame.Engine.villagersArray);
+        });
+
+        //ButtonsWoodcutters
+        buttonWoodcutterstoCitizens.addActionListener(e -> {
+            CreateActions.transformVillagers(EmpireGame.Engine.villagersWoodcuttingArray, EmpireGame.Engine.villagersArray);
+        });
+
+        //ButtonsBuilders
+        buttonBuilderstoCitizens.addActionListener(e -> {
+            CreateActions.transformVillagers(EmpireGame.Engine.villagersBuildersArray, EmpireGame.Engine.villagersArray);
+        });
+
+        //ButtonsScholars
+        buttonScholarstoCitizens.addActionListener(e -> {
+            CreateActions.transformVillagers(EmpireGame.Engine.villlagersScholarsArray, EmpireGame.Engine.villagersArray);
+        });
+
     }
 
     public void panelUpdate() {

@@ -22,13 +22,13 @@ public class Counter {
             while (true) {
                 try {
                     setHoney((int) (EmpireGame.Engine.villagersFarmingArray.size() * farmersGatherBatch * farmersGatheringSpeedmodifier));
-                    System.out.println(
-                                    "EmpireGame.Engine.villagersFarmingArray.size() * farmersGatherBatch * gatheringSpeedmodifier)" +
-                                    "\nHoney set to: " + honey +
-                                    "\nfarmersGatherBatch: " + farmersGatherBatch +
-                                    "\ngatheringSpeedmodifier: " + farmersGatheringSpeedmodifier +
-                                    "\nfarmersTimeModifier: " + farmersTimeModifier +
-                                    "\nfarmersGatheringtime:  " + farmersGatheringTime);
+//                    System.out.println(
+//                                    "EmpireGame.Engine.villagersFarmingArray.size() * farmersGatherBatch * gatheringSpeedmodifier)" +
+//                                    "\nHoney set to: " + honey +
+//                                    "\nfarmersGatherBatch: " + farmersGatherBatch +
+//                                    "\ngatheringSpeedmodifier: " + farmersGatheringSpeedmodifier +
+//                                    "\nfarmersTimeModifier: " + farmersTimeModifier +
+//                                    "\nfarmersGatheringtime:  " + farmersGatheringTime);
                     EmpireGame.GameRun.coffersPanelUpdate();
 
                 } catch (Exception e) {
@@ -36,7 +36,7 @@ public class Counter {
                 }
 
                 try {
-                    System.out.println("farmersGatheringTime * farmersTimeModifier\n");
+//                    System.out.println("farmersGatheringTime * farmersTimeModifier\n");
                     Thread.sleep((long) (farmersGatheringTime * farmersTimeModifier));
                 }
 

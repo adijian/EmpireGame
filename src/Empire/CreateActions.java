@@ -34,11 +34,11 @@ public class CreateActions {
             EmpireGame.GameRun.panelUpdate();
 
             if (toArray == EmpireGame.Engine.villagersWoodcuttingArray) {
-                GUI.display.append("\n" + randomVillager.nickname + " has picked up an axe and became a maple woodcutter.");
+                GUI.display.append("\n" + randomVillager.nickname + " has picked up an axe \nand became a maple woodcutter.");
 
             }
             if (toArray == EmpireGame.Engine.villagersFarmingArray) {
-                GUI.display.append("\n" + randomVillager.nickname + " has picked up a jar and started collecting honey \nand became a farmer.");
+                GUI.display.append("\n" + randomVillager.nickname + " has picked up a jar and started \ncollecting honey and became a farmer.");
 
             }
             if (toArray == EmpireGame.Engine.villagersBuildersArray) {

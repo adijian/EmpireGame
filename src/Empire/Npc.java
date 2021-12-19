@@ -36,20 +36,30 @@ class Npc extends EmpireGame.Engine {
             nickname = gender;
             assert nickname != null;
             if (nickname.equals("male")){
-                final String[] maleNickname = {"Eudes", "Garnier", "Gosse", "Josse", "Roul",
+                final String[] maleNickname = {
+                        "Eudes", "Garnier", "Gosse", "Josse", "Roul",
                         "Roland", "Vauqelin", "Jehan", "Fernnand", "Piers",
-                        "Geoffroi", "Estienne", "Guiscard", "Onfroi", "Franchesco"};
+                        "Geoffroi", "Estienne", "Guiscard", "Onfroi", "Franchesco",
+                        "Liam", "Oliver", "William", "Lucas", "Lex",
+                        "Arne", "Bjorn", "Erik", "Sten", "Ulf",
+                        "Rune", "Njal", "Frode", "Herald", "Sune"
+                };
                 Random randomMale = new Random();
                 int index = randomMale.nextInt(maleNickname.length);
                 return maleNickname[index];
             }
             if (nickname.equals("female")){
-                final String[] maleNickname = {"Eudes", "Garnier", "Gosse", "Josse", "Roul",
+                final String[] femaleNickname = {
+                        "Eudes", "Garnier", "Gosse", "Josse", "Roul",
                         "Roland", "Vauqelin", "Jehan", "Fernnand", "Piers",
-                        "Geoffroi", "Estienne", "Guiscard", "Onfroi", "Franchesco"};
+                        "Geoffroi", "Estienne", "Guiscard", "Onfroi", "Franchesco",
+                        "Frida", "Gertrud", "Estrid", "Liv", "Revna",
+                        "Thyra", "Yrsa", "Astrid", "Inga", "Erica",
+                        "Sigurda", "Embla", "Hella", "Eirunn", "Urda"
+                };
                 Random randomMale = new Random();
-                int index = randomMale.nextInt(maleNickname.length);
-                return maleNickname[index];
+                int index = randomMale.nextInt(femaleNickname.length);
+                return femaleNickname[index];
             }
             return nickname;
         }
