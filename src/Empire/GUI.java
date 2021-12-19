@@ -23,8 +23,11 @@ public class GUI {
     //Miners
     JButton buttonMinerstoCitizens;
     //Woodcutters
+    JButton buttonWoodcutterstoCitizens;
     //Builders
+    JButton buttonBuilderstoCitizens;
     //Scholars
+    JButton buttonScholarstoCitizens;
 
     Color colorTorquese = new Color(43, 104, 115);
     Color colorLightTorquese = new Color(63, 149, 164);
@@ -166,99 +169,99 @@ public class GUI {
         panelMining.add(buttonMinerstoCitizens, c);
 
         topPanel.add(panelMining);
-//
+
 //        //Woodcutting
-//        textFarms = new JTextArea("",1,10);
-//        textFarms.setText(" ");
-//        textFarms.setForeground(Color.black);
-//        textFarms.setFont(font2);
-//        textFarms.setBackground(colorLightTorquese);
-//        textFarms.setEditable(false);
-//
-//        panelFarms = new JPanel();
-//        panelFarms.setLayout(new GridBagLayout());
-//        panelFarms.setBackground(colorLightTorquese);
-//        panelFarms.setBorder(BorderFactory.createMatteBorder(2, 10, 12, 6, colorDarkTintedTorquese));
-//        panelFarms.setPreferredSize(new Dimension(250, topPanel.getHeight()));
-//
-//        c.fill = GridBagConstraints.RELATIVE;
-//        c.gridx = 1;
-//        c.gridy = 0;
-//        panelFarms.add(textFarms, c);
-//
-//        buttonCitizenstoFarms = new JButton();
-//        buttonCitizenstoFarms.setFocusPainted(false);
-//        buttonCitizenstoFarms.setPreferredSize(new Dimension(150,20));
-//        buttonCitizenstoFarms.setFont(font3);
-//        buttonCitizenstoFarms.setText("Transform");
-//        c.fill = GridBagConstraints.RELATIVE;
-//        c.gridx = 1;
-//        c.gridy = 1;
-//        panelFarms.add(buttonCitizenstoFarms, c);
-//
-//        topPanel.add(panelFarms);
-//
+        textWoodcutting = new JTextPane();
+        textWoodcutting.setText(" ");
+        textWoodcutting.setForeground(Color.black);
+        textWoodcutting.setFont(font2);
+        textWoodcutting.setBackground(colorLightTorquese);
+        textWoodcutting.setEditable(false);
+
+        panelWoodcutting = new JPanel();
+        panelWoodcutting.setLayout(new GridBagLayout());
+        panelWoodcutting.setBackground(colorLightTorquese);
+        panelWoodcutting.setBorder(BorderFactory.createMatteBorder(2, 10, 12, 6, colorDarkTintedTorquese));
+        panelWoodcutting.setPreferredSize(new Dimension(250, topPanel.getHeight()));
+
+        c.fill = GridBagConstraints.RELATIVE;
+        c.gridx = 1;
+        c.gridy = 0;
+        panelWoodcutting.add(textWoodcutting, c);
+
+        buttonWoodcutterstoCitizens = new JButton();
+        buttonWoodcutterstoCitizens.setFocusPainted(false);
+        buttonWoodcutterstoCitizens.setPreferredSize(new Dimension(150,20));
+        buttonWoodcutterstoCitizens.setFont(font3);
+        buttonWoodcutterstoCitizens.setText("Transform");
+        c.fill = GridBagConstraints.RELATIVE;
+        c.gridx = 1;
+        c.gridy = 1;
+        panelWoodcutting.add(buttonWoodcutterstoCitizens, c);
+
+        topPanel.add(panelWoodcutting);
+
 //        //Builders
-//        textFarms = new JTextArea("",1,10);
-//        textFarms.setText(" ");
-//        textFarms.setForeground(Color.black);
-//        textFarms.setFont(font2);
-//        textFarms.setBackground(colorLightTorquese);
-//        textFarms.setEditable(false);
-//
-//        panelFarms = new JPanel();
-//        panelFarms.setLayout(new GridBagLayout());
-//        panelFarms.setBackground(colorLightTorquese);
-//        panelFarms.setBorder(BorderFactory.createMatteBorder(2, 10, 12, 6, colorDarkTintedTorquese));
-//        panelFarms.setPreferredSize(new Dimension(250, topPanel.getHeight()));
-//
-//        c.fill = GridBagConstraints.RELATIVE;
-//        c.gridx = 1;
-//        c.gridy = 0;
-//        panelFarms.add(textFarms, c);
-//
-//        buttonCitizenstoFarms = new JButton();
-//        buttonCitizenstoFarms.setFocusPainted(false);
-//        buttonCitizenstoFarms.setPreferredSize(new Dimension(150,20));
-//        buttonCitizenstoFarms.setFont(font3);
-//        buttonCitizenstoFarms.setText("Transform");
-//        c.fill = GridBagConstraints.RELATIVE;
-//        c.gridx = 1;
-//        c.gridy = 1;
-//        panelFarms.add(buttonCitizenstoFarms, c);
-//
-//        topPanel.add(panelFarms);
-//
+        textBuilders = new JTextPane();
+        textBuilders.setText(" ");
+        textBuilders.setForeground(Color.black);
+        textBuilders.setFont(font2);
+        textBuilders.setBackground(colorLightTorquese);
+        textBuilders.setEditable(false);
+
+        panelBuilders = new JPanel();
+        panelBuilders.setLayout(new GridBagLayout());
+        panelBuilders.setBackground(colorLightTorquese);
+        panelBuilders.setBorder(BorderFactory.createMatteBorder(2, 10, 12, 6, colorDarkTintedTorquese));
+        panelBuilders.setPreferredSize(new Dimension(250, topPanel.getHeight()));
+
+        c.fill = GridBagConstraints.RELATIVE;
+        c.gridx = 1;
+        c.gridy = 0;
+        panelBuilders.add(textBuilders, c);
+
+        buttonBuilderstoCitizens = new JButton();
+        buttonBuilderstoCitizens.setFocusPainted(false);
+        buttonBuilderstoCitizens.setPreferredSize(new Dimension(150,20));
+        buttonBuilderstoCitizens.setFont(font3);
+        buttonBuilderstoCitizens.setText("Transform");
+        c.fill = GridBagConstraints.RELATIVE;
+        c.gridx = 1;
+        c.gridy = 1;
+        panelBuilders.add(buttonBuilderstoCitizens, c);
+
+        topPanel.add(panelBuilders);
+
 //        //Scholars
-//        textFarms = new JTextArea("",1,10);
-//        textFarms.setText(" ");
-//        textFarms.setForeground(Color.black);
-//        textFarms.setFont(font2);
-//        textFarms.setBackground(colorLightTorquese);
-//        textFarms.setEditable(false);
-//
-//        panelFarms = new JPanel();
-//        panelFarms.setLayout(new GridBagLayout());
-//        panelFarms.setBackground(colorLightTorquese);
-//        panelFarms.setBorder(BorderFactory.createMatteBorder(2, 10, 12, 6, colorDarkTintedTorquese));
-//        panelFarms.setPreferredSize(new Dimension(250, topPanel.getHeight()));
-//
-//        c.fill = GridBagConstraints.RELATIVE;
-//        c.gridx = 1;
-//        c.gridy = 0;
-//        panelFarms.add(textFarms, c);
-//
-//        buttonCitizenstoFarms = new JButton();
-//        buttonCitizenstoFarms.setFocusPainted(false);
-//        buttonCitizenstoFarms.setPreferredSize(new Dimension(150,20));
-//        buttonCitizenstoFarms.setFont(font3);
-//        buttonCitizenstoFarms.setText("Transform");
-//        c.fill = GridBagConstraints.RELATIVE;
-//        c.gridx = 1;
-//        c.gridy = 1;
-//        panelFarms.add(buttonCitizenstoFarms, c);
-//
-//        topPanel.add(panelFarms);
+        textScholars = new JTextPane();
+        textScholars.setText(" ");
+        textScholars.setForeground(Color.black);
+        textScholars.setFont(font2);
+        textScholars.setBackground(colorLightTorquese);
+        textScholars.setEditable(false);
+
+        panelScholars = new JPanel();
+        panelScholars.setLayout(new GridBagLayout());
+        panelScholars.setBackground(colorLightTorquese);
+        panelScholars.setBorder(BorderFactory.createMatteBorder(2, 10, 12, 6, colorDarkTintedTorquese));
+        panelScholars.setPreferredSize(new Dimension(250, topPanel.getHeight()));
+
+        c.fill = GridBagConstraints.RELATIVE;
+        c.gridx = 1;
+        c.gridy = 0;
+        panelScholars.add(textScholars, c);
+
+        buttonScholarstoCitizens = new JButton();
+        buttonScholarstoCitizens.setFocusPainted(false);
+        buttonScholarstoCitizens.setPreferredSize(new Dimension(150,20));
+        buttonScholarstoCitizens.setFont(font3);
+        buttonScholarstoCitizens.setText("Idle");
+        c.fill = GridBagConstraints.RELATIVE;
+        c.gridx = 1;
+        c.gridy = 1;
+        panelScholars.add(buttonScholarstoCitizens, c);
+
+        topPanel.add(panelScholars);
     }
 
     public void addActionListenersForButtons() {
@@ -274,6 +277,9 @@ public class GUI {
         textCitizens.setText("Citizens: " + EmpireGame.Engine.villagersArray.size());
         textFarms.setText("Farmers: " + EmpireGame.Engine.villagersFarmingArray.size());
         textMining.setText("Miners: " + EmpireGame.Engine.villagersMiningArray.size());
+        textWoodcutting.setText("Woodcutters: " + EmpireGame.Engine.villagersWoodcuttingArray.size());
+        textBuilders.setText("Builders: " + EmpireGame.Engine.villagersBuildersArray.size());
+        textScholars.setText("Scholars: " + EmpireGame.Engine.villlagersScholarsArray.size());
     }
 
     public void topPanel() {
