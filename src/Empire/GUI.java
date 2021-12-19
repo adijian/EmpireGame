@@ -17,7 +17,7 @@ public class GUI {
     JTextPane textCitizens, textFarms, textMining, textWoodcutting, textBuilders, textScholars;
 
     //Citizens
-    JButton buttonCitizens, buttonCitizenstoFarms;
+    JButton buttonCitizens, buttonCitizenstoFarms, buttonCitizenstoMiners, buttonCitizenstoWoodcutters, buttonCitizenstoBuilders, buttonCitizenstoScholars;
     //Farmers
     JButton buttonFarmstoCitizens;
     //Miners
@@ -87,18 +87,17 @@ public class GUI {
         panelCitizens.add(textCitizens, c);
         buttonCitizens = new JButton();
         buttonCitizens.setFocusPainted(false);
-        buttonCitizens.setPreferredSize(new Dimension(150,20));
+        buttonCitizens.setPreferredSize(new Dimension(160,30));
         buttonCitizens.setFont(font3);
-        buttonCitizens.setText("Create");
+        buttonCitizens.setText("Create (50 Honey)");
         c.fill = GridBagConstraints.RELATIVE;
         c.gridx = 1;
         c.gridy = 1;
         panelCitizens.add(buttonCitizens, c);
 
-
         buttonCitizenstoFarms = new JButton();
         buttonCitizenstoFarms.setFocusPainted(false);
-        buttonCitizenstoFarms.setPreferredSize(new Dimension(150,20));
+        buttonCitizenstoFarms.setPreferredSize(new Dimension(160,20));
         buttonCitizenstoFarms.setFont(font3);
         buttonCitizenstoFarms.setText("Transform to Farmer");
         c.fill = GridBagConstraints.RELATIVE;
@@ -106,7 +105,50 @@ public class GUI {
         c.gridy = 2;
         panelCitizens.add(buttonCitizenstoFarms, c);
 
+        buttonCitizenstoMiners = new JButton();
+        buttonCitizenstoMiners.setFocusPainted(false);
+        buttonCitizenstoMiners.setPreferredSize(new Dimension(160,20));
+        buttonCitizenstoMiners.setFont(font3);
+        buttonCitizenstoMiners.setText("Transform to Miner");
+        c.fill = GridBagConstraints.RELATIVE;
+        c.gridx = 1;
+        c.gridy = 3;
+        panelCitizens.add(buttonCitizenstoMiners, c);
+
+        buttonCitizenstoWoodcutters = new JButton();
+        buttonCitizenstoWoodcutters.setFocusPainted(false);
+        buttonCitizenstoWoodcutters.setPreferredSize(new Dimension(160,20));
+        buttonCitizenstoWoodcutters.setFont(font3);
+        buttonCitizenstoWoodcutters.setText("Transform to Woodcutter");
+        c.fill = GridBagConstraints.RELATIVE;
+        c.gridx = 1;
+        c.gridy = 4;
+        panelCitizens.add(buttonCitizenstoWoodcutters, c);
+
+        buttonCitizenstoBuilders = new JButton();
+        buttonCitizenstoBuilders.setFocusPainted(false);
+        buttonCitizenstoBuilders.setPreferredSize(new Dimension(160,20));
+        buttonCitizenstoBuilders.setFont(font3);
+        buttonCitizenstoBuilders.setText("Transform to Builder");
+        c.fill = GridBagConstraints.RELATIVE;
+        c.gridx = 1;
+        c.gridy = 5;
+        panelCitizens.add(buttonCitizenstoBuilders, c);
+
+        buttonCitizenstoScholars = new JButton();
+        buttonCitizenstoScholars.setFocusPainted(false);
+        buttonCitizenstoScholars.setPreferredSize(new Dimension(160,20));
+        buttonCitizenstoScholars.setFont(font3);
+        buttonCitizenstoScholars.setText("Transform to Scholar");
+        c.fill = GridBagConstraints.RELATIVE;
+        c.gridx = 1;
+        c.gridy = 6;
+        panelCitizens.add(buttonCitizenstoScholars, c);
+
         topPanel.add(panelCitizens);
+
+
+
 
         //Farmers
         textFarms = new JTextPane();
@@ -129,7 +171,7 @@ public class GUI {
 
         buttonFarmstoCitizens = new JButton();
         buttonFarmstoCitizens.setFocusPainted(false);
-        buttonFarmstoCitizens.setPreferredSize(new Dimension(150,20));
+        buttonFarmstoCitizens.setPreferredSize(new Dimension(160,20));
         buttonFarmstoCitizens.setFont(font3);
         buttonFarmstoCitizens.setText("Idle");
         c.fill = GridBagConstraints.RELATIVE;
@@ -138,6 +180,10 @@ public class GUI {
         panelFarms.add(buttonFarmstoCitizens, c);
 
         topPanel.add(panelFarms);
+
+
+
+
 
         //Mining
         textMining = new JTextPane();
@@ -160,7 +206,7 @@ public class GUI {
 
         buttonMinerstoCitizens = new JButton();
         buttonMinerstoCitizens.setFocusPainted(false);
-        buttonMinerstoCitizens.setPreferredSize(new Dimension(150,20));
+        buttonMinerstoCitizens.setPreferredSize(new Dimension(160,20));
         buttonMinerstoCitizens.setFont(font3);
         buttonMinerstoCitizens.setText("Idle");
         c.fill = GridBagConstraints.RELATIVE;
@@ -169,6 +215,11 @@ public class GUI {
         panelMining.add(buttonMinerstoCitizens, c);
 
         topPanel.add(panelMining);
+
+
+
+
+
 
 //        //Woodcutting
         textWoodcutting = new JTextPane();
@@ -191,7 +242,7 @@ public class GUI {
 
         buttonWoodcutterstoCitizens = new JButton();
         buttonWoodcutterstoCitizens.setFocusPainted(false);
-        buttonWoodcutterstoCitizens.setPreferredSize(new Dimension(150,20));
+        buttonWoodcutterstoCitizens.setPreferredSize(new Dimension(160,20));
         buttonWoodcutterstoCitizens.setFont(font3);
         buttonWoodcutterstoCitizens.setText("Transform");
         c.fill = GridBagConstraints.RELATIVE;
@@ -200,6 +251,14 @@ public class GUI {
         panelWoodcutting.add(buttonWoodcutterstoCitizens, c);
 
         topPanel.add(panelWoodcutting);
+
+
+
+
+
+
+
+
 
 //        //Builders
         textBuilders = new JTextPane();
@@ -222,7 +281,7 @@ public class GUI {
 
         buttonBuilderstoCitizens = new JButton();
         buttonBuilderstoCitizens.setFocusPainted(false);
-        buttonBuilderstoCitizens.setPreferredSize(new Dimension(150,20));
+        buttonBuilderstoCitizens.setPreferredSize(new Dimension(160,20));
         buttonBuilderstoCitizens.setFont(font3);
         buttonBuilderstoCitizens.setText("Transform");
         c.fill = GridBagConstraints.RELATIVE;
@@ -231,6 +290,12 @@ public class GUI {
         panelBuilders.add(buttonBuilderstoCitizens, c);
 
         topPanel.add(panelBuilders);
+
+
+
+
+
+
 
 //        //Scholars
         textScholars = new JTextPane();
@@ -253,7 +318,7 @@ public class GUI {
 
         buttonScholarstoCitizens = new JButton();
         buttonScholarstoCitizens.setFocusPainted(false);
-        buttonScholarstoCitizens.setPreferredSize(new Dimension(150,20));
+        buttonScholarstoCitizens.setPreferredSize(new Dimension(160,20));
         buttonScholarstoCitizens.setFont(font3);
         buttonScholarstoCitizens.setText("Idle");
         c.fill = GridBagConstraints.RELATIVE;
@@ -270,6 +335,12 @@ public class GUI {
         });
         buttonCitizenstoFarms.addActionListener(e -> {
             CreateActions.transformVillagers(EmpireGame.Engine.villagersArray, EmpireGame.Engine.villagersFarmingArray);
+        });
+        buttonCitizenstoMiners.addActionListener(e -> {
+            CreateActions.transformVillagers(EmpireGame.Engine.villagersArray, EmpireGame.Engine.villagersMiningArray);
+        });
+        buttonCitizenstoWoodcutters.addActionListener(e -> {
+            CreateActions.transformVillagers(EmpireGame.Engine.villagersArray, EmpireGame.Engine.villagersWoodcuttingArray);
         });
     }
 
@@ -332,7 +403,11 @@ public class GUI {
     }
 
     public void coffersPanelUpdate() {
-        coffersLabel.setText("Coffers\n" + "Honey: " + Counter.honey);
+        coffersLabel.setText("Coffers" +
+                             "\nHoney: " + Counter.honey +
+                             "\nGold: " + Counter.gold +
+                             "\nMaple: " + Counter.maple
+        );
     }
 
     public void bottomPanel() {

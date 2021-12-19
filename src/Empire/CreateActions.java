@@ -46,7 +46,7 @@ public class CreateActions {
 
             }
             if (toArray == EmpireGame.Engine.villagersMiningArray) {
-                GUI.display.append("\n" + randomVillager.nickname + " transformed to a caves miner.");
+                GUI.display.append("\n" + randomVillager.nickname + " transformed to a gold miner.");
 
             }
             if (toArray == EmpireGame.Engine.villlagersScholarsArray) {

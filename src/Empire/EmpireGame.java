@@ -36,6 +36,8 @@ public class EmpireGame {
     public static void main(String[] args) {
         GameRun = new GUI();
         EmpireGame.Engine.gameStart();
-        Counter.main();
+        Counter.mainHoney();
+        Counter.mainGold();
+        Counter.mainMaple();
     }
 }
