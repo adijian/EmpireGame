@@ -118,4 +118,41 @@ public class Counter {
             }
         }
     }
+
+    public static long intellect = 0;
+    public int scholarsGatheringTime = 60000;
+    public double scholarsGatherBatch = 7.5;
+    public double scholarsTimeModifier = 0.1;
+    public double scholarsGatheringSpeedmodifier = 0.50;
+
+    public void setIntellect(int intellectNewNumber) {
+        intellect += intellectNewNumber;
+    }
+
+    public static void mainIntellect () {
+        Thread IntellectCountingThread = new Thread(new Counter().new IntellectRunnable());
+        IntellectCountingThread.start();
+    }
+
+    private class IntellectRunnable implements Runnable {
+
+        public void run() {
+            while (true) {
+                try {
+                    setIntellect((int) (EmpireGame.Engine.villlagersScholarsArray.size() * scholarsGatherBatch * scholarsGatheringSpeedmodifier));
+
+                } catch (Exception e) {
+                    e.printStackTrace();
+                }
+
+                try {
+                    Thread.sleep((long) (scholarsGatheringTime * scholarsTimeModifier));
+                }
+
+                catch (InterruptedException e) {
+                    e.printStackTrace();
+                }
+            }
+        }
+    }
 }

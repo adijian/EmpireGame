@@ -34,23 +34,23 @@ public class CreateActions {
             EmpireGame.GameRun.panelUpdate();
 
             if (toArray == EmpireGame.Engine.villagersWoodcuttingArray) {
-                GUI.display.append("\n" + randomVillager.nickname + " transformed to a maple woodcutter.");
+                GUI.display.append("\n" + randomVillager.nickname + " has picked up an axe and became a maple woodcutter.");
 
             }
             if (toArray == EmpireGame.Engine.villagersFarmingArray) {
-                GUI.display.append("\n" + randomVillager.nickname + " transformed to a honey farmer.");
+                GUI.display.append("\n" + randomVillager.nickname + " has picked up a jar and started collecting honey \nand became a farmer.");
 
             }
             if (toArray == EmpireGame.Engine.villagersBuildersArray) {
-                GUI.display.append("\n" + randomVillager.nickname + " transformed to a den builder.");
+                GUI.display.append("\n" + randomVillager.nickname + " has worn a constructor's hat \nand became a den builder.");
 
             }
             if (toArray == EmpireGame.Engine.villagersMiningArray) {
-                GUI.display.append("\n" + randomVillager.nickname + " transformed to a gold miner.");
+                GUI.display.append("\n" + randomVillager.nickname + " has picked up a pickaxe \nand became a gold miner.");
 
             }
             if (toArray == EmpireGame.Engine.villlagersScholarsArray) {
-                GUI.display.append("\n" + randomVillager.nickname + " transformed to an educated scholar.");
+                GUI.display.append("\n" + randomVillager.nickname + " has picked up a book and robe \nand became an educated scholar.");
 
             }
             if (toArray == EmpireGame.Engine.villagersArray) {

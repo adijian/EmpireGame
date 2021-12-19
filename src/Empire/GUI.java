@@ -99,7 +99,7 @@ public class GUI {
         buttonCitizenstoFarms.setFocusPainted(false);
         buttonCitizenstoFarms.setPreferredSize(new Dimension(160,20));
         buttonCitizenstoFarms.setFont(font3);
-        buttonCitizenstoFarms.setText("Transform to Farmer");
+        buttonCitizenstoFarms.setText("Assign Farmer");
         c.fill = GridBagConstraints.RELATIVE;
         c.gridx = 1;
         c.gridy = 2;
@@ -109,7 +109,7 @@ public class GUI {
         buttonCitizenstoMiners.setFocusPainted(false);
         buttonCitizenstoMiners.setPreferredSize(new Dimension(160,20));
         buttonCitizenstoMiners.setFont(font3);
-        buttonCitizenstoMiners.setText("Transform to Miner");
+        buttonCitizenstoMiners.setText("Assign Miner");
         c.fill = GridBagConstraints.RELATIVE;
         c.gridx = 1;
         c.gridy = 3;
@@ -119,7 +119,7 @@ public class GUI {
         buttonCitizenstoWoodcutters.setFocusPainted(false);
         buttonCitizenstoWoodcutters.setPreferredSize(new Dimension(160,20));
         buttonCitizenstoWoodcutters.setFont(font3);
-        buttonCitizenstoWoodcutters.setText("Transform to Woodcutter");
+        buttonCitizenstoWoodcutters.setText("Assign Woodcutter");
         c.fill = GridBagConstraints.RELATIVE;
         c.gridx = 1;
         c.gridy = 4;
@@ -129,7 +129,7 @@ public class GUI {
         buttonCitizenstoBuilders.setFocusPainted(false);
         buttonCitizenstoBuilders.setPreferredSize(new Dimension(160,20));
         buttonCitizenstoBuilders.setFont(font3);
-        buttonCitizenstoBuilders.setText("Transform to Builder");
+        buttonCitizenstoBuilders.setText("Assign Builder");
         c.fill = GridBagConstraints.RELATIVE;
         c.gridx = 1;
         c.gridy = 5;
@@ -139,7 +139,7 @@ public class GUI {
         buttonCitizenstoScholars.setFocusPainted(false);
         buttonCitizenstoScholars.setPreferredSize(new Dimension(160,20));
         buttonCitizenstoScholars.setFont(font3);
-        buttonCitizenstoScholars.setText("Transform to Scholar");
+        buttonCitizenstoScholars.setText("Assign Scholar");
         c.fill = GridBagConstraints.RELATIVE;
         c.gridx = 1;
         c.gridy = 6;
@@ -244,7 +244,7 @@ public class GUI {
         buttonWoodcutterstoCitizens.setFocusPainted(false);
         buttonWoodcutterstoCitizens.setPreferredSize(new Dimension(160,20));
         buttonWoodcutterstoCitizens.setFont(font3);
-        buttonWoodcutterstoCitizens.setText("Transform");
+        buttonWoodcutterstoCitizens.setText("Idle");
         c.fill = GridBagConstraints.RELATIVE;
         c.gridx = 1;
         c.gridy = 1;
@@ -283,7 +283,7 @@ public class GUI {
         buttonBuilderstoCitizens.setFocusPainted(false);
         buttonBuilderstoCitizens.setPreferredSize(new Dimension(160,20));
         buttonBuilderstoCitizens.setFont(font3);
-        buttonBuilderstoCitizens.setText("Transform");
+        buttonBuilderstoCitizens.setText("Idle");
         c.fill = GridBagConstraints.RELATIVE;
         c.gridx = 1;
         c.gridy = 1;
@@ -341,6 +341,9 @@ public class GUI {
         });
         buttonCitizenstoWoodcutters.addActionListener(e -> {
             CreateActions.transformVillagers(EmpireGame.Engine.villagersArray, EmpireGame.Engine.villagersWoodcuttingArray);
+        });
+        buttonCitizenstoScholars.addActionListener(e -> {
+            CreateActions.transformVillagers(EmpireGame.Engine.villagersArray, EmpireGame.Engine.villlagersScholarsArray);
         });
     }
 
@@ -403,10 +406,11 @@ public class GUI {
     }
 
     public void coffersPanelUpdate() {
-        coffersLabel.setText("Coffers" +
+        coffersLabel.setText("~ Coffers ~" +
                              "\nHoney: " + Counter.honey +
                              "\nGold: " + Counter.gold +
-                             "\nMaple: " + Counter.maple
+                             "\nMaple: " + Counter.maple +
+                             "\nIntellect: " + Counter.intellect
         );
     }
 

@@ -39,5 +39,6 @@ public class EmpireGame {
         Counter.mainHoney();
         Counter.mainGold();
         Counter.mainMaple();
+        Counter.mainIntellect();
     }
 }
