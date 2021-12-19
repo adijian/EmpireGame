@@ -16,7 +16,7 @@ public class CreateActions {
         if (newVillager1.gender.equals("male")) {
             GUI.display.append("\nA new villager was born and raised.\nHis name is " + newVillager1.nickname + ". \nHe is villager number " + newVillager1.number + ".");
         }
-        EmpireGame.GameRun.createTopPanels();
+        EmpireGame.GameRun.panelUpdate();
     }
 
         public static void createTownCenter() {
@@ -30,6 +30,8 @@ public class CreateActions {
 
             fromArray.remove(randomVillager);
             toArray.add(randomVillager);
+
+            EmpireGame.GameRun.panelUpdate();
 
             if (toArray == EmpireGame.Engine.villagersWoodcuttingArray) {
                 GUI.display.append("\n" + randomVillager.nickname + " transformed to a maple woodcutter.");
@@ -55,7 +57,6 @@ public class CreateActions {
                 GUI.display.append("\n" + randomVillager.nickname + " has gone idle.");
 
             }
-            EmpireGame.GameRun.createTopPanels();
         }
 
         public static void Build(String building_built) {
