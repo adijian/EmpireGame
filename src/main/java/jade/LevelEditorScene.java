@@ -1,6 +1,7 @@
 package jade;
 
 import org.lwjgl.BufferUtils;
+import renderer.Shader;
 
 import java.nio.FloatBuffer;
 import java.nio.IntBuffer;
@@ -50,12 +51,14 @@ public class LevelEditorScene extends Scene {
     };
 
     private int vaoID, vboID, eboID;
+    public Shader defaultShader;
 
     public LevelEditorScene() {
-
     }
     @Override
     public void init() {
+        defaultShader = new Shader("assets/shaders/default.glsl");
+        defaultShader.compile();
         // Compile and link shaders
         // First load and compile the vertex shader
         vertexID = glCreateShader(GL_VERTEX_SHADER);
@@ -101,6 +104,8 @@ public class LevelEditorScene extends Scene {
             System.out.println(glGetProgramInfoLog(shaderProgram, len));
             assert false : "";
         }
+
+
         // generate VAO VBO and EBO
         vaoID = glGenVertexArrays();
         glBindVertexArray(vaoID);
@@ -135,7 +140,7 @@ public class LevelEditorScene extends Scene {
 
     @Override
     public void update(float dt) {
-        glUseProgram(shaderProgram);
+        defaultShader.use();
         // BInd the VA0 that we're using
         glBindVertexArray(vaoID);
         // enable the vertex attribute pointers
@@ -147,7 +152,7 @@ public class LevelEditorScene extends Scene {
         glDisableVertexAttribArray(0);
         glDisableVertexAttribArray(1);
         glBindVertexArray(0);
-        glUseProgram(0);
+        defaultShader.detach();
 
 
     }
